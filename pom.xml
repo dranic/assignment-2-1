@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>eu.ibagroup</groupId>
+        <artifactId>easy-rpa-engine-parent</artifactId>
+        <version>2.2.2</version>
+    </parent>
+    <groupId>eu.easyrpa.course</groupId>
+    <artifactId>assignment-2-1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>eu.ibagroup</groupId>
+            <artifactId>easy-rpa-engine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.ibagroup</groupId>
+            <artifactId>easy-rpa-engine-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>eu.ibagroup</groupId>
+                <artifactId>easy-rpa-ap-export-plugin</artifactId>
+                <!--
+                    uncomment this block and fill in CS endpoint, username and password;
+                    to upload package to control server, run
+                    > mvn clean deploy -P cs-upload
+                    or through command line
+                    > mvn clean deploy -P cs-upload -Dupload.endpoint=[endpoint] -Dupload.username=[username] -Dupload.password=[password]
+                <configuration>
+                    <endpoint></endpoint>
+                    <username></username>
+                    <password></password>
+                </configuration>
+                -->
+            </plugin>
+        </plugins>
+    </build>
+</project>
