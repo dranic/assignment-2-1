@@ -20,6 +20,7 @@ public class Module extends ApModule {
 
     @Override
     public TaskOutput run() throws Exception {
+        getInput().set("input_file", "input.json");
         CompletableFuture<TaskOutput> result = execute(getInput(), GetResourceContentTask.class);
 
         List<ResourceDto> resources = result.get().get("resources", List.class);

@@ -27,7 +27,7 @@ public class DownloadPageTask extends ApTask {
 
     @Override
     public void execute() throws Exception {
-        File html = new File(resource.getName() + ".html");
+        File html = new File("temp\\" + resource.getName() + ".html");
         FileUtils.copyURLToFile(new URL(resource.getUrl()), html);
         resource.setFilePath(html.getPath());
     }
