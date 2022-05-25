@@ -6,6 +6,7 @@ import eu.ibagroup.easyrpa.engine.apflow.TaskOutput;
 import eu.ibagroup.easyrpa.engine.apflow.history.Execution;
 import lombok.extern.slf4j.Slf4j;
 import org.example.entity.ResourceDto;
+import org.example.tasks.CreateZipTask;
 import org.example.tasks.DownloadPageTask;
 import org.example.tasks.GetResourceContentTask;
 
@@ -39,6 +40,9 @@ public class Module extends ApModule {
         processedResources.forEach(res -> {
             log.info("############# " + res);
         });
+
+        execute(getInput(), CreateZipTask.class);
+
 
 
 //        return execute(mergedOutput, ProcessResultsTask.class).get();
