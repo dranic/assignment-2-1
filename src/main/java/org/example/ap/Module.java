@@ -4,6 +4,8 @@ import eu.ibagroup.easyrpa.engine.annotation.ApModuleEntry;
 import eu.ibagroup.easyrpa.engine.apflow.ApModule;
 import eu.ibagroup.easyrpa.engine.apflow.TaskOutput;
 import eu.ibagroup.easyrpa.engine.apflow.history.Execution;
+import eu.ibagroup.easyrpa.engine.boot.ApModuleRunner;
+import eu.ibagroup.easyrpa.engine.boot.configuration.DevelopmentConfigurationModule;
 import lombok.extern.slf4j.Slf4j;
 import org.example.entity.ResourceDto;
 import org.example.tasks.CreateZipTask;
@@ -49,4 +51,9 @@ public class Module extends ApModule {
 
         return doNotCareOfResult();
     }
+
+        public static void main(String[] arg) {
+            //use this code to test your Automation Process
+            ApModuleRunner.localLaunch(Module.class, new DevelopmentConfigurationModule());
+        }
 }

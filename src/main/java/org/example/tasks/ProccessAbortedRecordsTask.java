@@ -12,6 +12,7 @@ import org.example.entity.ResourceDto;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 
 @ApTaskEntry(name = "Parsing input.json file")
 @Slf4j
@@ -21,8 +22,6 @@ public class ProccessAbortedRecordsTask extends ApTask {
 
     @Override
     public void execute() throws Exception {
-        File html = new File("temp\\" + resource.getName() + ".html");
-        FileUtils.copyURLToFile(new URL(resource.getUrl()), html);
-        resource.setFilePath(html.getPath());
+
     }
 }
