@@ -13,4 +13,8 @@ public class ResourceDto {
     private String name;
     private String filePath;
 
+    public boolean isErrorOccurred(){
+        return filePath == null;
+    }
+
 }

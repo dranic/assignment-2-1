@@ -7,6 +7,7 @@ import eu.ibagroup.easyrpa.engine.annotation.Input;
 import eu.ibagroup.easyrpa.engine.annotation.OnError;
 import eu.ibagroup.easyrpa.engine.annotation.Output;
 import eu.ibagroup.easyrpa.engine.apflow.ApTask;
+import eu.ibagroup.easyrpa.engine.exception.ErrorStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
@@ -33,10 +34,5 @@ public class GetResourceContentTask extends ApTask {
         String json = IOUtils.toString(is, Charsets.UTF_8);
 
         resources = new Gson().fromJson(json, new TypeToken<List<ResourceDto>>() {}.getType());
-    }
-
-    @OnError
-    public void onError(Throwable throwable) {
-        log.info("@@@@@@@@@@@@ on ERROR: {}, cause: {}" + throwable.getMessage(), throwable.getCause());
     }
 }
